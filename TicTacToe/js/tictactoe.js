@@ -20,7 +20,7 @@ function placeXorO(squareNumber){
                 activePlayer = "X";
             }
 
-    audio('./TicTacToe/media/place.mp3');
+    audio('.//js/media/place.mp3');
             if(activePlayer === "O"){
                 disableClick();
                 setTimeout(function (){ computersTurn(); }, 1000);
@@ -60,7 +60,7 @@ function checkWinConditions() {
     else if (arrayIncludes('6O', '4O', '2O')){drawWinLine(100, 508, 520, 90);}
     else if (arrayIncludes('0O', '4O', '8O')){drawWinLine(100, 100, 520, 520);}
     else if (selectedSquares.length >= 9){
-        audio('../TicTacToe/media/tie.mp3');
+        audio('./js/media/tie.mp3');
         setTimeout(function () {resetGame(); }, 1000);
     }
     function arrayIncludes(squareA, squareB, squareC){
@@ -83,9 +83,9 @@ function audio(audioURL){
 }
 
 //draws win lines
-function drawWinLine(coordx1, corrdy1, coordx2, coordy2) {
+function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     const canvas = document.getElementById('win-lines');
-    const c = canvas.getContext ('2d');
+    const c = canvas.getContext('2d');
     let x1 = coordX1,
         y1 = coordY1,
         x2 = coordX2,
@@ -119,7 +119,7 @@ function drawWinLine(coordx1, corrdy1, coordx2, coordy2) {
         cancelAnimationFrame(animationLoop);
     }
     disableClick();
-    audio('./media/winGame.mp3');
+    audio('./js/media/winGame.mp3');
     animateLineDrawing();
     setTimeout(function() { clear(); resetGame(); }, 1000);
 }
