@@ -20,7 +20,7 @@ function placeXorO(squareNumber){
                 activePlayer = "X";
             }
 
-    audio('.//js/media/place.mp3');
+    audio('./js/media/place.mp3');
             if(activePlayer === "O"){
                 disableClick();
                 setTimeout(function (){ computersTurn(); }, 1000);
